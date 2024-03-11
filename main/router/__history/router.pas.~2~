@@ -1,0 +1,52 @@
+unit router;
+
+interface
+
+type
+  TRouters = class
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New: TRouters;
+
+    end;
+
+  var
+  Routers:TRouters;
+
+ implementation
+ uses
+  Router4D;
+ //  Disooft.pages.login,
+  // Disooft.pages.layout,
+   //Disooft.pages.home,
+  // Disooft.pages.cliente ;
+
+
+
+constructor TRouters.Create;
+begin
+  //TRouter4D
+   // .Switch
+   //  .Router('Layout', TPageLayout)
+   //  .Router('Home',TPageHome)
+   //  .Router('Login',TPageLogin)
+   //  .Router('Cliente',TPageCliente);
+
+
+  end;
+destructor TRouters.Destroy;
+begin
+  inherited;
+end;
+class function TRouters.New: TRouters;
+begin
+  Result := Self.Create;
+end;
+initialization
+  Routers := TRouters.New;
+finalization
+  Routers.Free;
+end.
+

@@ -1,0 +1,61 @@
+unit UFormMenu;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.ExtCtrls, Router4D.Interfaces;
+
+type
+  TFormMenu = class(TForm, iRouter4DComponent)
+    PanelMenu: TPanel;
+    PanelLeft: TPanel;
+    PanelTop: TPanel;
+    PanelCentral: TPanel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    function Render : Tform;
+    procedure UnRender;
+  end;
+
+var
+  FormMenu: TFormMenu;
+
+implementation
+uses
+Router4D , UFormHome;
+
+{$R *.dfm}
+
+{ TFormMenu }
+
+function TFormMenu.Render: Tform;
+begin
+
+TRouter4D.Render<TFormHome>.SetElement(PanelCentral, PanelMenu);
+
+ Result:= Self;
+end;
+
+procedure TFormMenu.SpeedButton1Click(Sender: TObject);
+begin
+TRouter4D.Link.&To('Home');
+end;
+
+procedure TFormMenu.SpeedButton2Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+procedure TFormMenu.UnRender;
+begin
+
+end;
+
+end.

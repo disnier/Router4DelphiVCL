@@ -1,0 +1,60 @@
+unit UFormLogin;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
+   Vcl.Buttons, Vcl.StdCtrls,  Router4D.Interfaces;
+
+type
+  TFormLogin = class(TForm, iRouter4DComponent)
+    PanelLogin: TPanel;
+    Panel2: TPanel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    SpeedButton1: TSpeedButton;
+    Image1: TImage;
+    procedure FormResize(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    function Render : Tform;
+    procedure UnRender;
+  end;
+
+var
+  FormLogin: TFormLogin;
+
+implementation
+uses
+Router4D;
+
+{$R *.dfm}
+
+{ TForm1 }
+
+procedure TFormLogin.FormResize(Sender: TObject);
+begin
+Panel2.Top:=Round(Panellogin.Height/2-Panel2.Height/2);
+Panel2.Left:=Round(Panellogin.Width/2-Panel2.Width/2);
+end;
+
+function TFormLogin.Render: TForm;
+begin
+ Result:=Self ;
+end;
+
+procedure TFormLogin.SpeedButton1Click(Sender: TObject);
+begin
+ // TRouter4D.Link.IndexLink('Menu');
+  TRouter4D.Link.&To('Menu');
+end;
+
+procedure TFormLogin.UnRender;
+begin
+
+end;
+
+end.

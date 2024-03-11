@@ -1,0 +1,31 @@
+unit UFormCliente;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.Buttons, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
+
+type
+  TFormCliente = class(TForm)
+    PanelCliente: TPanel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    SpeedButton1: TSpeedButton;
+    DateTimePicker1: TDateTimePicker;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormCliente: TFormCliente;
+
+implementation
+
+{$R *.dfm}
+
+end.
